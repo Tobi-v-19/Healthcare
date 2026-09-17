@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pulmonology – Health Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--green-dark:#1a5c3a;--green-mid:#2e8b57;--green-light:#4caf7d;--green-pale:#e8f5ee;--green-mint:#f0faf4;--white:#fff;--text-dark:#0f2d1f;--text-mid:#3a5a47;--text-light:#6b8f7a;--border:#c8e6d4;--accent:#1565c0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--white);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}.logo-icon{width:38px;height:38px;background:var(--green-dark);border-radius:10px;display:flex;align-items:center;justify-content:center;}.logo-icon svg{width:20px;height:20px;fill:white;}.logo-text{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--green-dark);font-weight:700;}.logo-sub{font-size:0.62rem;color:var(--green-light);letter-spacing:2px;text-transform:uppercase;display:block;}
+.nav-links{display:flex;gap:28px;list-style:none;}.nav-links a{text-decoration:none;color:var(--text-mid);font-size:0.88rem;font-weight:500;}
+.btn-primary{background:var(--green-dark);color:white;border:none;border-radius:50px;padding:11px 24px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.dept-hero{margin-top:68px;background:linear-gradient(135deg,#e3f2fd 0%,#bbdefb 40%,#90caf9 100%);padding:70px 5%;display:flex;align-items:center;gap:60px;min-height:72vh;position:relative;overflow:hidden;}
+.hero-left{flex:1;z-index:1;}
+.dept-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(21,101,192,0.1);color:var(--accent);border-radius:50px;padding:7px 18px;font-size:0.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}
+.dept-tag .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.6rem);font-weight:800;line-height:1.1;color:var(--text-dark);margin-bottom:18px;}
+h1 em{font-style:italic;color:var(--accent);}
+.hero-desc{font-size:1rem;color:var(--text-mid);line-height:1.75;margin-bottom:32px;max-width:480px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-accent{background:var(--accent);color:white;border:none;border-radius:50px;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s;}.btn-accent:hover{background:#0d47a1;}
+.btn-ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);border-radius:50px;padding:11px 24px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.3s;}.btn-ghost:hover{background:var(--accent);color:white;}
+.hero-stats{display:flex;gap:32px;margin-top:44px;flex-wrap:wrap;}
+.stat-box{background:white;border-radius:16px;padding:18px 24px;box-shadow:0 4px 20px rgba(21,101,192,0.1);}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--accent);}
+.stat-label{font-size:0.78rem;color:var(--text-light);font-weight:500;margin-top:2px;}
+.hero-right{flex:1;display:flex;justify-content:center;align-items:center;z-index:1;}
+.dept-icon-big{width:340px;height:340px;background:linear-gradient(145deg,#90caf9,#42a5f5);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10rem;box-shadow:0 20px 60px rgba(21,101,192,0.2);}
+section{padding:80px 5%;}
+.section-label{display:inline-block;background:rgba(21,101,192,0.1);color:var(--accent);font-size:0.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:14px;}
+.section-label.green{background:var(--green-pale);color:var(--green-dark);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.3rem);font-weight:700;color:var(--text-dark);margin-bottom:10px;}
+.sub{font-size:0.95rem;color:var(--text-light);line-height:1.65;max-width:580px;}
+.text-center{text-align:center;}.text-center .sub{margin:0 auto;}
+.services-section{background:var(--green-mint);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;}
+.service-card{background:white;border-radius:20px;padding:30px 26px;border:1.5px solid var(--border);transition:all 0.3s;cursor:pointer;}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(21,101,192,0.1);border-color:#90caf9;}
+.svc-icon{font-size:2.2rem;margin-bottom:16px;display:block;}
+.service-card h3{font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.service-card p{font-size:0.85rem;color:var(--text-light);line-height:1.6;}
+.conditions-section{background:white;}
+.cond-flex{display:flex;gap:48px;margin-top:44px;flex-wrap:wrap;}
+.cond-col{flex:1;min-width:260px;}
+.cond-item{padding:16px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;}
+.cond-item:last-child{border-bottom:none;}
+.cond-dot{width:10px;height:10px;background:var(--accent);border-radius:50%;margin-top:5px;flex-shrink:0;}
+.cond-item h4{font-size:0.93rem;font-weight:700;color:var(--text-dark);margin-bottom:3px;}
+.cond-item p{font-size:0.82rem;color:var(--text-light);}
+.sleep-card{background:linear-gradient(145deg,var(--accent),#0d47a1);border-radius:24px;padding:36px;color:white;flex-shrink:0;width:320px;}
+.sleep-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px;}
+.sleep-card p{color:rgba(255,255,255,0.8);font-size:0.88rem;line-height:1.6;margin-bottom:20px;}
+.sleep-card ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.sleep-card ul li{font-size:0.85rem;color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:8px;}
+.sleep-card ul li::before{content:'✓';color:var(--accent);background:rgba(255,255,255,0.2);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0;}
+.doctors-section{background:var(--green-mint);}
+.doctors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;}
+.doc-card{background:white;border-radius:22px;overflow:hidden;box-shadow:0 4px 20px rgba(26,92,58,0.08);transition:all 0.3s;}
+.doc-card:hover{transform:translateY(-6px);}
+.doc-photo{height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(145deg,#bbdefb,#42a5f5);}
+.doc-info{padding:20px;}
+.doc-info h3{font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+.doc-info p{font-size:0.82rem;color:var(--text-light);margin-bottom:10px;}
+.doc-badge{display:inline-block;background:rgba(21,101,192,0.1);color:var(--accent);font-size:0.72rem;font-weight:700;padding:4px 12px;border-radius:50px;}
+.appt-cta{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:white;text-align:center;padding:80px 5%;}
+.appt-cta h2{color:white;margin-bottom:12px;}
+.appt-cta p{color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 32px;}
+footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:36px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+footer a{color:var(--green-light);text-decoration:none;font-size:0.83rem;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.5;}}
+.reveal{opacity:0;transform:translateY(24px);transition:all 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:900px){.dept-hero{flex-direction:column;}.services-grid,.doctors-grid{grid-template-columns:1fr 1fr;}.cond-flex{flex-direction:column;}.sleep-card{width:100%;}.dept-icon-big{width:220px;height:220px;font-size:6rem;}}
+</style>
+</head>
+<body>
+<nav><a href="web.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div><div><span class="logo-text">City Hospital</span><span class="logo-sub">Healthcare & Wellness</span></div></a><ul class="nav-links"><li><a href="web.html">Home</a></li><li><a href="web.html">Departments</a></li></ul><button class="btn-primary" onclick="location.href='city-hospital.html#appointment'">Book Appointment</button></nav>
+<section class="dept-hero"><div class="hero-left"><a href="web.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--green-dark);text-decoration:none;font-size:0.88rem;font-weight:600;margin-bottom:20px;">← Back to Departments</a><div class="dept-tag"><span class="dot"></span> Department</div><h1>Pulmonology<br/><em>Lung & Respiratory</em></h1><p class="hero-desc">Specialized diagnosis and treatment of all lung and respiratory conditions. From asthma to complex lung diseases, our pulmonologists help you breathe easier and live fuller.</p><div class="hero-actions"><button class="btn-accent" onclick="location.href='city-hospital.html#appointment'">Book Consultation</button><button class="btn-ghost">Call: 020-1234-5683</button></div><div class="hero-stats"><div class="stat-box"><div class="stat-num">5K+</div><div class="stat-label">Patients Treated</div></div><div class="stat-box"><div class="stat-num">5</div><div class="stat-label">Pulmonologists</div></div><div class="stat-box"><div class="stat-num">PFT</div><div class="stat-label">Full Lab On-site</div></div></div></div><div class="hero-right"><div class="dept-icon-big">🫁</div></div></section>
+<section class="services-section"><div class="text-center reveal"><div class="section-label">Our Services</div><h2>Pulmonology Services</h2><p class="sub">Advanced respiratory diagnostics and treatment in a dedicated lung health centre.</p></div><div class="services-grid"><div class="service-card reveal"><span class="svc-icon">💨</span><h3>Spirometry & PFT</h3><p>Complete pulmonary function testing to assess lung capacity and airflow.</p></div><div class="service-card reveal"><span class="svc-icon">🔭</span><h3>Bronchoscopy</h3><p>Direct visualization of airways for diagnosis of lung cancer, infections, and abnormalities.</p></div><div class="service-card reveal"><span class="svc-icon">😤</span><h3>Asthma Management</h3><p>Comprehensive asthma action plans, allergy testing, and inhaler technique training.</p></div><div class="service-card reveal"><span class="svc-icon">😴</span><h3>Sleep Study (PSG)</h3><p>Overnight polysomnography to diagnose sleep apnea and other sleep-related disorders.</p></div><div class="service-card reveal"><span class="svc-icon">🫧</span><h3>COPD Treatment</h3><p>Personalized COPD management including pulmonary rehabilitation programs.</p></div><div class="service-card reveal"><span class="svc-icon">🦠</span><h3>Infection & TB Care</h3><p>Expert management of pneumonia, tuberculosis, and other respiratory infections.</p></div></div></section>
+<section class="conditions-section"><div class="reveal"><div class="section-label green">Conditions We Treat</div><h2>Respiratory Conditions</h2><p class="sub">Our team specializes in the full spectrum of lung and airway diseases.</p></div><div class="cond-flex"><div class="cond-col"><div class="cond-item reveal"><div class="cond-dot"></div><div><h4>Asthma</h4><p>Chronic airway inflammation causing wheezing, breathlessness, and cough.</p></div></div><div class="cond-item reveal"><div class="cond-dot"></div><div><h4>COPD</h4><p>Progressive lung disease including emphysema and chronic bronchitis.</p></div></div><div class="cond-item reveal"><div class="cond-dot"></div><div><h4>Pulmonary Fibrosis</h4><p>Scarring of lung tissue causing progressive breathlessness.</p></div></div><div class="cond-item reveal"><div class="cond-dot"></div><div><h4>Lung Cancer Screening</h4><p>Early detection programs with low-dose CT scans for high-risk individuals.</p></div></div></div><div class="sleep-card reveal"><h3>Sleep Apnea Clinic</h3><p>Our dedicated sleep lab diagnoses and treats obstructive sleep apnea with CPAP therapy and lifestyle programs.</p><ul><li>Overnight Sleep Studies</li><li>Home Sleep Testing</li><li>CPAP Titration & Setup</li><li>Snoring Treatment</li><li>Weight Management Integration</li></ul></div></div></section>
+<section class="doctors-section"><div class="text-center reveal"><div class="section-label">Our Team</div><h2>Pulmonology Specialists</h2><p class="sub">Expert lung specialists dedicated to restoring and maintaining your respiratory health.</p></div><div class="doctors-grid"><div class="doc-card reveal"><div class="doc-photo">👨‍⚕️</div><div class="doc-info"><h3>Dr. Sanjay Patil</h3><p>MBBS, MD (Pulmonology), DNB</p><p style="font-size:0.8rem;color:var(--text-light);">17+ years · COPD & Critical Care</p><span class="doc-badge">Senior Pulmonologist</span></div></div><div class="doc-card reveal"><div class="doc-photo" style="background:linear-gradient(145deg,#e3f2fd,#90caf9);">👩‍⚕️</div><div class="doc-info"><h3>Dr. Leela Krishnan</h3><p>MBBS, MD, Sleep Medicine Fellow</p><p style="font-size:0.8rem;color:var(--text-light);">12+ years · Sleep Medicine</p><span class="doc-badge">Sleep Specialist</span></div></div><div class="doc-card reveal"><div class="doc-photo" style="background:linear-gradient(145deg,#e8eaf6,#9fa8da);">👨‍⚕️</div><div class="doc-info"><h3>Dr. Ramesh Verma</h3><p>MBBS, MD (Chest Medicine)</p><p style="font-size:0.8rem;color:var(--text-light);">9+ years · TB & Respiratory Infections</p><span class="doc-badge">Pulmonologist</span></div></div></div></section>
+<section class="appt-cta"><div class="section-label" style="background:rgba(255,255,255,0.15);color:white;">Book Now</div><h2>Breathe Better, Live Better</h2><p>Get expert respiratory care today. Don't ignore persistent cough or breathing difficulty.</p><button class="btn-accent" onclick="location.href='web.html#appointment'" style="font-size:1rem;padding:15px 36px;">Book an Appointment</button></section>
+<footer><p>© 2026 City Hospital, Pune · Pulmonology Department</p><a href="web.html">← Back to Main Website</a></footer>
+<script>const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));</script>
+</body>
+</html>

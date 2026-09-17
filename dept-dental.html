@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dental Care – Health Care </title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--green-dark:#1a5c3a;--green-mid:#2e8b57;--green-light:#4caf7d;--green-pale:#e8f5ee;--green-mint:#f0faf4;--white:#fff;--text-dark:#0f2d1f;--text-mid:#3a5a47;--text-light:#6b8f7a;--border:#c8e6d4;--accent:#0288d1;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--white);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:38px;height:38px;background:var(--green-dark);border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.logo-icon svg{width:20px;height:20px;fill:white;}
+.logo-text{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--green-dark);font-weight:700;}
+.logo-sub{font-size:0.62rem;color:var(--green-light);letter-spacing:2px;text-transform:uppercase;display:block;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--text-mid);font-size:0.88rem;font-weight:500;}
+.btn-primary{background:var(--green-dark);color:white;border:none;border-radius:50px;padding:11px 24px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.btn-primary:hover{background:var(--green-light);transform:translateY(-2px);}
+.dept-hero{margin-top:68px;background:linear-gradient(135deg,#e1f5fe 0%,#b3e5fc 40%,#81d4fa 100%);padding:70px 5%;display:flex;align-items:center;gap:60px;min-height:72vh;position:relative;overflow:hidden;}
+.hero-left{flex:1;z-index:1;}
+.dept-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(2,136,209,0.1);color:var(--accent);border-radius:50px;padding:7px 18px;font-size:0.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;border:1px solid rgba(2,136,209,0.2);}
+.dept-tag .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.6rem);font-weight:800;line-height:1.1;color:var(--text-dark);margin-bottom:18px;}
+h1 em{font-style:italic;color:var(--accent);}
+.hero-desc{font-size:1rem;color:var(--text-mid);line-height:1.75;margin-bottom:32px;max-width:480px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-accent{background:var(--accent);color:white;border:none;border-radius:50px;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.btn-accent:hover{background:#01579b;transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);border-radius:50px;padding:11px 24px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.btn-ghost:hover{background:var(--accent);color:white;}
+.hero-stats{display:flex;gap:32px;margin-top:44px;flex-wrap:wrap;}
+.stat-box{background:white;border-radius:16px;padding:18px 24px;box-shadow:0 4px 20px rgba(2,136,209,0.1);}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--accent);}
+.stat-label{font-size:0.78rem;color:var(--text-light);font-weight:500;margin-top:2px;}
+.hero-right{flex:1;display:flex;justify-content:center;align-items:center;z-index:1;}
+.dept-icon-big{width:340px;height:340px;background:linear-gradient(145deg,#b3e5fc,#29b6f6);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10rem;box-shadow:0 20px 60px rgba(2,136,209,0.25);}
+section{padding:80px 5%;}
+.section-label{display:inline-block;background:rgba(2,136,209,0.1);color:var(--accent);font-size:0.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:14px;}
+.section-label.green{background:var(--green-pale);color:var(--green-dark);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.3rem);font-weight:700;color:var(--text-dark);margin-bottom:10px;}
+.sub{font-size:0.95rem;color:var(--text-light);line-height:1.65;max-width:580px;}
+.text-center{text-align:center;}.text-center .sub{margin:0 auto;}
+.services-section{background:var(--green-mint);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;}
+.service-card{background:white;border-radius:20px;padding:30px 26px;border:1.5px solid var(--border);transition:all 0.3s;cursor:pointer;}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(2,136,209,0.12);border-color:#81d4fa;}
+.svc-icon{font-size:2.2rem;margin-bottom:16px;display:block;}
+.service-card h3{font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.service-card p{font-size:0.85rem;color:var(--text-light);line-height:1.6;}
+.pricing-section{background:white;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;}
+.price-card{border-radius:24px;padding:36px 28px;border:2px solid var(--border);text-align:center;transition:all 0.3s;position:relative;}
+.price-card.popular{border-color:var(--accent);background:rgba(2,136,209,0.03);}
+.popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;font-size:0.72rem;font-weight:700;padding:5px 18px;border-radius:50px;letter-spacing:0.5px;}
+.price-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+.price-card .price{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--accent);margin:16px 0 8px;}
+.price-card .price span{font-size:1rem;font-weight:400;color:var(--text-light);}
+.price-card ul{list-style:none;text-align:left;margin:20px 0 28px;display:flex;flex-direction:column;gap:10px;}
+.price-card ul li{font-size:0.85rem;color:var(--text-mid);display:flex;align-items:center;gap:8px;}
+.price-card ul li::before{content:'✓';color:var(--accent);font-weight:700;}
+.doctors-section{background:var(--green-mint);}
+.doctors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;}
+.doc-card{background:white;border-radius:22px;overflow:hidden;box-shadow:0 4px 20px rgba(26,92,58,0.08);transition:all 0.3s;}
+.doc-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(2,136,209,0.15);}
+.doc-photo{height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(145deg,#b3e5fc,#29b6f6);}
+.doc-info{padding:20px;}
+.doc-info h3{font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+.doc-info p{font-size:0.82rem;color:var(--text-light);margin-bottom:10px;}
+.doc-badge{display:inline-block;background:rgba(2,136,209,0.1);color:var(--accent);font-size:0.72rem;font-weight:700;padding:4px 12px;border-radius:50px;}
+.appt-cta{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:white;text-align:center;padding:80px 5%;}
+.appt-cta h2{color:white;margin-bottom:12px;}
+.appt-cta p{color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 32px;}
+footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:36px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+footer a{color:var(--green-light);text-decoration:none;font-size:0.83rem;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.4);}}
+.reveal{opacity:0;transform:translateY(24px);transition:all 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:900px){.dept-hero{flex-direction:column;}.services-grid,.pricing-grid,.doctors-grid{grid-template-columns:1fr 1fr;}.dept-icon-big{width:220px;height:220px;font-size:6rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="web.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div><div><span class="logo-text">City Hospital</span><span class="logo-sub">Healthcare & Wellness</span></div></a>
+  <ul class="nav-links"><li><a href="web.html">Home</a></li><li><a href="web.html">Departments</a></li><li><a href="web.html#wellness">Wellness</a></li></ul>
+  <button class="btn-primary" onclick="location.href='web.html#appointment'">Book Appointment</button>
+</nav>
+<section class="dept-hero">
+  <div class="hero-left">
+    <a href="web.html#specializations" style="display:inline-flex;align-items:center;gap:8px;color:var(--green-dark);text-decoration:none;font-size:0.88rem;font-weight:600;margin-bottom:20px;">← Back to Departments</a>
+    <div class="dept-tag"><span class="dot"></span> Department</div>
+    <h1>Dental Care<br/><em>Smile Brighter</em></h1>
+    <p class="hero-desc">From routine check-ups to advanced cosmetic dentistry, our dental team delivers exceptional oral healthcare in a comfortable, state-of-the-art clinic.</p>
+    <div class="hero-actions"><button class="btn-accent" onclick="location.href='web.html#appointment'">Book Consultation</button><button class="btn-ghost">Call: 020-1234-5680</button></div>
+    <div class="hero-stats"><div class="stat-box"><div class="stat-num">8K+</div><div class="stat-label">Smiles Restored</div></div><div class="stat-box"><div class="stat-num">10</div><div class="stat-label">Dental Specialists</div></div><div class="stat-box"><div class="stat-num">Pain<br/>Free</div><div class="stat-label">Treatments</div></div></div>
+  </div>
+  <div class="hero-right"><div class="dept-icon-big">🦷</div></div>
+</section>
+<section class="services-section">
+  <div class="text-center reveal"><div class="section-label">Our Services</div><h2>Dental Services</h2><p class="sub">Comprehensive dental care for all ages using the latest techniques and pain-free technology.</p></div>
+  <div class="services-grid">
+    <div class="service-card reveal"><span class="svc-icon">🪥</span><h3>Preventive Dentistry</h3><p>Regular cleanings, fluoride treatments, and sealants to maintain optimal oral health.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">✨</span><h3>Teeth Whitening</h3><p>Professional in-chair and take-home whitening systems for a brilliantly brighter smile.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">🦷</span><h3>Dental Implants</h3><p>Permanent, natural-looking tooth replacements using titanium implants.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">😬</span><h3>Orthodontics & Braces</h3><p>Traditional braces and clear aligner therapy for straighter teeth at any age.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">🔧</span><h3>Root Canal Treatment</h3><p>Pain-free root canal therapy to save infected or damaged teeth.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">👶</span><h3>Pediatric Dentistry</h3><p>Child-friendly dental care in a fun, calming environment kids love.</p></div>
+  </div>
+</section>
+<section class="pricing-section">
+  <div class="text-center reveal"><div class="section-label green">Packages</div><h2>Dental Care Plans</h2><p class="sub">Affordable dental care packages designed for individuals and families.</p></div>
+  <div class="pricing-grid">
+    <div class="price-card reveal"><h3>Basic</h3><p style="font-size:0.85rem;color:var(--text-light);">Essential dental health</p><div class="price">₹999<span>/visit</span></div><ul><li>Full Check-up</li><li>X-Ray (2 films)</li><li>Cleaning & Polishing</li><li>Consultation</li></ul><button class="btn-ghost">Book Now</button></div>
+    <div class="price-card popular reveal"><div class="popular-badge">MOST POPULAR</div><h3>Premium</h3><p style="font-size:0.85rem;color:var(--text-light);">Complete oral care</p><div class="price">₹2,499<span>/year</span></div><ul><li>4 Check-ups/year</li><li>Full X-Ray Set</li><li>2 Cleanings/year</li><li>1 Whitening Session</li><li>Priority Booking</li></ul><button class="btn-accent">Book Now</button></div>
+    <div class="price-card reveal"><h3>Family</h3><p style="font-size:0.85rem;color:var(--text-light);">For the whole family</p><div class="price">₹6,999<span>/year</span></div><ul><li>Up to 4 Members</li><li>All Basic Services</li><li>Emergency Cover</li><li>Orthodontic Discount 15%</li></ul><button class="btn-ghost">Book Now</button></div>
+  </div>
+</section>
+<section class="doctors-section">
+  <div class="text-center reveal"><div class="section-label green">Our Team</div><h2>Dental Specialists</h2><p class="sub">Experienced, gentle dentists dedicated to your comfort and smile.</p></div>
+  <div class="doctors-grid">
+    <div class="doc-card reveal"><div class="doc-photo">👩‍⚕️</div><div class="doc-info"><h3>Dr. Kavita Sharma</h3><p>BDS, MDS (Prosthodontics)</p><p style="font-size:0.8rem;color:var(--text-light);">12+ years · Implants & Cosmetic</p><span class="doc-badge">Prosthodontist</span></div></div>
+    <div class="doc-card reveal"><div class="doc-photo" style="background:linear-gradient(145deg,#e1f5fe,#81d4fa);">👨‍⚕️</div><div class="doc-info"><h3>Dr. Rajan Mehta</h3><p>BDS, MDS (Orthodontics)</p><p style="font-size:0.8rem;color:var(--text-light);">14+ years · Braces & Aligners</p><span class="doc-badge">Orthodontist</span></div></div>
+    <div class="doc-card reveal"><div class="doc-photo" style="background:linear-gradient(145deg,#e0f7fa,#4dd0e1);">👩‍⚕️</div><div class="doc-info"><h3>Dr. Sneha Iyer</h3><p>BDS, MDS (Pedodontics)</p><p style="font-size:0.8rem;color:var(--text-light);">8+ years · Children's Dentistry</p><span class="doc-badge">Pedodontist</span></div></div>
+  </div>
+</section>
+<section class="appt-cta"><div class="section-label" style="background:rgba(255,255,255,0.15);color:white;">Book Now</div><h2>Book Your Dental Appointment</h2><p>A healthy smile is a confident smile. Schedule your check-up today.</p><button class="btn-accent" onclick="location.href='city-hospital.html#appointment'" style="font-size:1rem;padding:15px 36px;">Book an Appointment</button></section>
+<footer><p>© 2026 Health care, Nashik· Dental Department</p><a href="web.html">← Back to Main Website</a></footer>
+<script>const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));</script>
+</body>
+</html>

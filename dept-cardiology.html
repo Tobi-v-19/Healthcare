@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cardiology – healthcare</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--green-dark:#1a5c3a;--green-mid:#2e8b57;--green-light:#4caf7d;--green-pale:#e8f5ee;--green-mint:#f0faf4;--white:#fff;--text-dark:#0f2d1f;--text-mid:#3a5a47;--text-light:#6b8f7a;--border:#c8e6d4;--accent:#e53935;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--white);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;box-shadow:0 2px 16px rgba(26,92,58,0.07);}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:38px;height:38px;background:var(--green-dark);border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.logo-icon svg{width:20px;height:20px;fill:white;}
+.logo-text{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--green-dark);font-weight:700;}
+.logo-sub{font-size:0.62rem;color:var(--green-light);letter-spacing:2px;text-transform:uppercase;display:block;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--text-mid);font-size:0.88rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--green-dark);}
+.btn-primary{background:var(--green-dark);color:white;border:none;border-radius:50px;padding:11px 24px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.btn-primary:hover{background:var(--green-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,139,87,0.3);}
+.back-btn{display:inline-flex;align-items:center;gap:8px;color:var(--green-dark);text-decoration:none;font-size:0.88rem;font-weight:600;transition:gap 0.2s;}
+.back-btn:hover{gap:12px;}
+
+/* HERO */
+.dept-hero{margin-top:68px;background:linear-gradient(135deg,#fff5f5 0%,#ffe0e0 40%,#ffd0d0 100%);padding:70px 5%;display:flex;align-items:center;gap:60px;min-height:72vh;position:relative;overflow:hidden;}
+.dept-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(229,57,53,0.12) 0%,transparent 70%);border-radius:50%;}
+.hero-left{flex:1;z-index:1;}
+.dept-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(229,57,53,0.1);color:var(--accent);border-radius:50px;padding:7px 18px;font-size:0.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;border:1px solid rgba(229,57,53,0.2);}
+.dept-tag .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.6rem);font-weight:800;line-height:1.1;color:var(--text-dark);margin-bottom:18px;}
+h1 em{font-style:italic;color:var(--accent);}
+.hero-desc{font-size:1rem;color:var(--text-mid);line-height:1.75;margin-bottom:32px;max-width:480px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-accent{background:var(--accent);color:white;border:none;border-radius:50px;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.btn-accent:hover{background:#c62828;transform:translateY(-2px);box-shadow:0 8px 24px rgba(229,57,53,0.35);}
+.btn-ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);border-radius:50px;padding:11px 24px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.btn-ghost:hover{background:var(--accent);color:white;}
+.hero-stats{display:flex;gap:32px;margin-top:44px;flex-wrap:wrap;}
+.stat-box{background:white;border-radius:16px;padding:18px 24px;box-shadow:0 4px 20px rgba(229,57,53,0.1);border:1px solid rgba(229,57,53,0.1);}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--accent);}
+.stat-label{font-size:0.78rem;color:var(--text-light);font-weight:500;margin-top:2px;}
+.hero-right{flex:1;display:flex;justify-content:center;align-items:center;z-index:1;}
+.dept-icon-big{width:340px;height:340px;background:linear-gradient(145deg,#ffcdd2,#ef9a9a);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10rem;box-shadow:0 20px 60px rgba(229,57,53,0.2);}
+
+/* CONTENT */
+section{padding:80px 5%;}
+.section-label{display:inline-block;background:var(--green-pale);color:var(--green-dark);font-size:0.73rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:14px;}
+.section-label.red{background:rgba(229,57,53,0.1);color:var(--accent);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.3rem);font-weight:700;color:var(--text-dark);margin-bottom:10px;}
+.sub{font-size:0.95rem;color:var(--text-light);line-height:1.65;max-width:580px;}
+.text-center{text-align:center;}.text-center .sub{margin:0 auto;}
+
+/* SERVICES GRID */
+.services-section{background:var(--green-mint);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;}
+.service-card{background:white;border-radius:20px;padding:30px 26px;border:1.5px solid var(--border);transition:all 0.3s;cursor:pointer;}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(26,92,58,0.12);border-color:var(--green-light);}
+.svc-icon{font-size:2.2rem;margin-bottom:16px;display:block;}
+.service-card h3{font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.service-card p{font-size:0.85rem;color:var(--text-light);line-height:1.6;}
+
+/* CONDITIONS */
+.conditions-section{background:white;}
+.conditions-wrap{display:flex;gap:56px;align-items:center;flex-wrap:wrap;margin-top:44px;}
+.conditions-list{flex:1;min-width:280px;}
+.cond-item{display:flex;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid var(--border);}
+.cond-item:last-child{border-bottom:none;}
+.cond-dot{width:10px;height:10px;background:var(--accent);border-radius:50%;margin-top:6px;flex-shrink:0;}
+.cond-item h4{font-size:0.95rem;font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+.cond-item p{font-size:0.83rem;color:var(--text-light);line-height:1.5;}
+.conditions-aside{width:340px;flex-shrink:0;background:linear-gradient(145deg,var(--accent),#c62828);border-radius:28px;padding:36px;color:white;}
+.conditions-aside h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:12px;}
+.conditions-aside p{color:rgba(255,255,255,0.8);font-size:0.9rem;line-height:1.6;margin-bottom:24px;}
+.conditions-aside ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.conditions-aside ul li{display:flex;align-items:center;gap:10px;font-size:0.88rem;color:rgba(255,255,255,0.9);}
+.conditions-aside ul li::before{content:'✓';width:20px;height:20px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;flex-shrink:0;}
+
+/* DOCTORS */
+.doctors-section{background:var(--green-mint);}
+.doctors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;}
+.doc-card{background:white;border-radius:22px;overflow:hidden;box-shadow:0 4px 20px rgba(26,92,58,0.08);transition:all 0.3s;}
+.doc-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(26,92,58,0.15);}
+.doc-photo{height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(145deg,#ffcdd2,#ef9a9a);}
+.doc-info{padding:20px;}
+.doc-info h3{font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+.doc-info p{font-size:0.82rem;color:var(--text-light);margin-bottom:10px;}
+.doc-badge{display:inline-block;background:rgba(229,57,53,0.1);color:var(--accent);font-size:0.72rem;font-weight:700;padding:4px 12px;border-radius:50px;}
+
+/* APPOINTMENT CTA */
+.appt-cta{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:white;text-align:center;padding:80px 5%;}
+.appt-cta h2{color:white;margin-bottom:12px;}
+.appt-cta p{color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 32px;}
+
+/* FOOTER */
+footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:36px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+footer p{font-size:0.83rem;}
+footer a{color:var(--green-light);text-decoration:none;font-size:0.83rem;}
+
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.4);}}
+.reveal{opacity:0;transform:translateY(24px);transition:all 0.7s cubic-bezier(0.4,0,0.2,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:900px){.dept-hero{flex-direction:column;}.services-grid{grid-template-columns:1fr 1fr;}.doctors-grid{grid-template-columns:1fr 1fr;}.conditions-wrap{flex-direction:column;}.conditions-aside{width:100%;}.dept-icon-big{width:220px;height:220px;font-size:6rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="web.html" class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+    <div><span class="logo-text">Health Care</span><span class="logo-sub">Healthcare & Wellness</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="web.html">Home</a></li>
+    <li><a href="web.html">Departments</a></li>
+    <li><a href="web.html">Wellness</a></li>
+    <li><a href="web.html">Our Team</a></li>
+  </ul>
+  <button class="btn-primary" onclick="location.href='web.html#appointment'">Book Appointment</button>
+</nav>
+
+<section class="dept-hero">
+  <div class="hero-left">
+    <a href="web.html" class="back-btn">← Back to Departments</a>
+    <div class="dept-tag"><span class="dot"></span> Department</div>
+    <h1>Cardiology<br/><em>Heart Care</em></h1>
+    <p class="hero-desc">Our Cardiology department provides world-class diagnosis and treatment for all heart-related conditions. From preventive care to complex interventional procedures, our expert cardiologists are committed to your heart health.</p>
+    <div class="hero-actions">
+      <button class="btn-accent" onclick="location.href='city-hospital.html#appointment'">Book Consultation</button>
+      <button class="btn-ghost">Emergency: 020-1234-5678</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box"><div class="stat-num">5K+</div><div class="stat-label">Heart Patients Treated</div></div>
+      <div class="stat-box"><div class="stat-num">8</div><div class="stat-label">Expert Cardiologists</div></div>
+      <div class="stat-box"><div class="stat-num">98%</div><div class="stat-label">Success Rate</div></div>
+    </div>
+  </div>
+  <div class="hero-right"><div class="dept-icon-big">🫀</div></div>
+</section>
+
+<section class="services-section">
+  <div class="text-center reveal">
+    <div class="section-label red">Our Services</div>
+    <h2>Cardiology Services</h2>
+    <p class="sub">Comprehensive cardiac care using state-of-the-art technology and evidence-based treatment protocols.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal"><span class="svc-icon">📊</span><h3>ECG & Echocardiography</h3><p>Advanced electrocardiogram and echo imaging to assess heart function, structure, and blood flow.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">🩺</span><h3>Stress Testing</h3><p>Treadmill and pharmacological stress tests to evaluate heart performance under controlled conditions.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">🔬</span><h3>Cardiac Catheterization</h3><p>Minimally invasive procedure to diagnose and treat coronary artery disease and blockages.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">💊</span><h3>Preventive Cardiology</h3><p>Personalized risk assessments, lifestyle counseling, and medication management to prevent heart disease.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">⚡</span><h3>Pacemaker Implantation</h3><p>Implantation and management of pacemakers and defibrillators for rhythm disorders.</p></div>
+    <div class="service-card reveal"><span class="svc-icon">🏥</span><h3>Cardiac Rehabilitation</h3><p>Supervised recovery programs post-surgery or heart attack to restore strength and prevent recurrence.</p></div>
+  </div>
+</section>
+
+<section class="conditions-section">
+  <div class="reveal">
+    <div class="section-label red">Conditions We Treat</div>
+    <h2>Common Heart Conditions</h2>
+    <p class="sub">Our team is experienced in diagnosing and managing a full spectrum of cardiovascular conditions.</p>
+  </div>
+  <div class="conditions-wrap">
+    <div class="conditions-list">
+      <div class="cond-item reveal"><div class="cond-dot"></div><div><h4>Coronary Artery Disease</h4><p>Narrowing of coronary arteries reducing blood supply to the heart muscle.</p></div></div>
+      <div class="cond-item reveal"><div class="cond-dot"></div><div><h4>Heart Failure</h4><p>Condition where the heart doesn't pump blood efficiently enough to meet body's needs.</p></div></div>
+      <div class="cond-item reveal"><div class="cond-dot"></div><div><h4>Arrhythmia</h4><p>Irregular heartbeat patterns including atrial fibrillation and ventricular tachycardia.</p></div></div>
+      <div class="cond-item reveal"><div class="cond-dot"></div><div><h4>Hypertension</h4><p>High blood pressure management to reduce risk of stroke and heart attack.</p></div></div>
+      <div class="cond-item reveal"><div class="cond-dot"></div><div><h4>Valvular Heart Disease</h4><p>Diseases affecting the heart valves including stenosis and regurgitation.</p></div></div>
+    </div>
+    <div class="conditions-aside reveal">
+      <h3>Emergency Heart Care</h3>
+      <p>Our cardiac emergency unit is operational 24/7 with rapid response teams for heart attacks and acute cardiac events.</p>
+      <ul>
+        <li>24/7 Cardiac ICU</li>
+        <li>Rapid Angioplasty (Door-to-Balloon &lt;90 min)</li>
+        <li>Dedicated Chest Pain Unit</li>
+        <li>Advanced Life Support Teams</li>
+        <li>Helicopter Emergency Services</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="doctors-section">
+  <div class="text-center reveal">
+    <div class="section-label">Meet Our Cardiologists</div>
+    <h2>Expert Heart Specialists</h2>
+    <p class="sub">Our board-certified cardiologists bring decades of experience and compassion to every patient.</p>
+  </div>
+  <div class="doctors-grid">
+    <div class="doc-card reveal"><div class="doc-photo">👨‍⚕️</div><div class="doc-info"><h3>Dr. Rajesh Sharma</h3><p>MBBS, MD (Cardiology), DM</p><p style="font-size:0.8rem;color:var(--text-light);">20+ years experience · Interventional Cardiology</p><span class="doc-badge">Senior Cardiologist</span></div></div>
+    <div class="doc-card reveal"><div class="doc-photo" style="background:linear-gradient(145deg,#fce4ec,#f48fb1);">👩‍⚕️</div><div class="doc-info"><h3>Dr. Meena Kapoor</h3><p>MBBS, MD, DM (Cardiology)</p><p style="font-size:0.8rem;color:var(--text-light);">15+ years experience · Preventive Cardiology</p><span class="doc-badge">Cardiologist</span></div></div>
+    <div class="doc-card reveal"><div class="doc-photo" style="background:linear-gradient(145deg,#ffd7d7,#ff8a80);">👨‍⚕️</div><div class="doc-info"><h3>Dr. Suresh Nair</h3><p>MBBS, MS, MCh (Cardiac Surgery)</p><p style="font-size:0.8rem;color:var(--text-light);">18+ years experience · Cardiac Surgery</p><span class="doc-badge">Cardiac Surgeon</span></div></div>
+  </div>
+</section>
+
+<section class="appt-cta">
+  <div class="section-label" style="background:rgba(255,255,255,0.15);color:white;">Book Now</div>
+  <h2>Ready to Take Care of Your Heart?</h2>
+  <p>Schedule a consultation with our expert cardiologists today. Early detection saves lives.</p>
+  <button class="btn-accent" onclick="location.href='city-hospital.html#appointment'" style="font-size:1rem;padding:15px 36px;">Book an Appointment</button>
+</section>
+
+<footer>
+  <p>© 2026 City Hospital, Pune · Cardiology Department</p>
+  <a href="web.html">← Back to Main Website</a>
+</footer>
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>
